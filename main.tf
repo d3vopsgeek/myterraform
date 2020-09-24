@@ -5,3 +5,12 @@ resource "aws_instance" "MyEC2Instance" {
         Name = "Created by Terraform"
     }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "terraform99"
+    key    = "templates/key"
+    region = "us-east-1"
+  }
+}
+
